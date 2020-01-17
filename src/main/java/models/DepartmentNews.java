@@ -15,3 +15,4 @@ public class DepartmentNews extends News{
         this.departmentId = departmentId;
     }
 }
+
