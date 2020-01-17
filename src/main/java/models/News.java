@@ -2,9 +2,14 @@ package models;
 
 import java.util.Objects;
 
-public abstract class News {
+public class News {
     private String title;
     private String content;
+
+    public News(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
 
     @Override
     public boolean equals(Object o) {
