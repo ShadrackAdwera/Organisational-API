@@ -1,5 +1,6 @@
 package dao;
 
+import models.Departments;
 import models.Users;
 import org.junit.After;
 import org.junit.Before;
@@ -12,6 +13,7 @@ import static org.junit.Assert.*;
 
 public class Sql2oUsersDaoTest {
     private Sql2oUsersDao usersDao;
+    private Sql2oDepartmentsDao departmentsDao;
     private Connection connection;
 
     @Before
@@ -19,6 +21,7 @@ public class Sql2oUsersDaoTest {
         String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "", "");
         usersDao = new Sql2oUsersDao(sql2o);
+        departmentsDao = new Sql2oDepartmentsDao(sql2o);
         connection = sql2o.open();
     }
 
@@ -69,10 +72,28 @@ public class Sql2oUsersDaoTest {
         usersDao.clearAll();
         assertEquals(0, usersDao.findAll().size());
     }
+    @Test
+    public void getAllEmployeesInDepartment_returnsAllEmployeesInDepartment(){
+       Departments departments = setUpDepartment();
+       departmentsDao.save(departments);
+       Departments departments1 = setUpDepartment();
+       departmentsDao.save(departments1);
+       Users users = setUpUserForDepartment(departments);
+       usersDao.save(users);
+       Users users1 = setUpUserForDepartment(departments);
+       usersDao.save(users1);
+       assertEquals(2, usersDao.allUsersInADepartment(departments.getId()).size());
+    }
 
     //helpers
     public Users setUpUser(){
     return new Users("Deez Nuts","Deeez Nuts", "Master Chief",1);
+    }
+    public Departments setUpDepartment(){
+        return new Departments("Finance Department","Finance", 20);
+    }
+    public Users setUpUserForDepartment(Departments departments){
+        return new Users("Deez Nuts", "Deez","Master Chef", departments.getId());
     }
 }
 
