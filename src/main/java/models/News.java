@@ -5,6 +5,7 @@ import java.util.Objects;
 public class News {
     private String title;
     private String content;
+    private int id;
 
     public News(String title, String content){
         this.title = title;
@@ -18,6 +19,14 @@ public class News {
         News news = (News) o;
         return Objects.equals(getTitle(), news.getTitle()) &&
                 Objects.equals(getContent(), news.getContent());
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
