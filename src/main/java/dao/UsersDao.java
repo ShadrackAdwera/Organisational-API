@@ -18,6 +18,4 @@ public interface UsersDao {
     void delete(int id);
     //delete all users
     void clearAll();
-
-
 }

@@ -6,6 +6,7 @@ public class Departments {
     private String name;
     private String description;
     private int numOfEmployees;
+    public int id;
     public Departments(String name, String description, int numOfEmployees){
         this.name = name;
         this.description = description;
@@ -45,6 +46,14 @@ public class Departments {
 
     public int getNumOfEmployees() {
         return numOfEmployees;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setNumOfEmployees(int numOfEmployees) {
