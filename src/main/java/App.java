@@ -12,16 +12,26 @@ import org.sql2o.Sql2o;
 import java.util.List;
 
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567;
+    }
 
     public static void main(String[]args){
+        port(getHerokuAssignedPort());
         Sql2oNewsDao newsDao;
         Sql2oUsersDao usersDao;
         Sql2oDepartmentsDao departmentsDao;
         Connection connection;
         Gson gson = new Gson();
 
-        String connectionString = "jdbc:postgresql://localhost:5432/organisational_api";
-        Sql2o sql2o = new Sql2o(connectionString, "adwesh", "password");
+//        String connectionString = "jdbc:postgresql://localhost:5432/organisational_api";
+//        Sql2o sql2o = new Sql2o(connectionString, "adwesh", "password");
+        String connectionString = "jdbc:postgresql://ec2-3-220-86-239.compute-1.amazonaws.com:5432/df6no4hsvv48ho";
+        Sql2o sql2o = new Sql2o(connectionString, "itklervbebhobt", "66179e1c8eda8c524fd1f5d9b2bead52895c528dcd59694c48d5769c9f5d4f13");
         newsDao = new Sql2oNewsDao(sql2o);
         usersDao = new Sql2oUsersDao(sql2o);
         departmentsDao = new Sql2oDepartmentsDao(sql2o);
