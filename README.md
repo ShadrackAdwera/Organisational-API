@@ -13,12 +13,12 @@ POJOs are used to store department, news and employee(users) details which in tu
 * You need to install the [Java SDK](https://sdkman.io/install) in order to create Java applications and the [Java Runtime Environment](https://sdkman.io/usage) which provides the requirements for executing a Java application.
 * The code can be run on any java IDE: NetBeans, IntelliJ IDEA, Eclipse etc
 * Download and install [postman](https://www.getpostman.com/downloads/), then
-* On ItelliJ, simply run the command **$ gradle run** and write the url **localhost:4567** on postman to test the end points
+* On IntelliJ, run the command **$ gradle run** and write the url **localhost:4567** on postman to test the end points
 ![landing-page](src/main/resources/public/images/postman1.png)
 * A postgres database also needs to be [installed](https://www.2ndquadrant.com/en/blog/pginstaller-install-postgresql/)
 * Once installed, fire up the database by typing on the terminal **$ psql** and you can now create a [user with a password](https://www.postgresql.org/docs/8.0/sql-createuser.html) . Make sure to edit the connection string in the **app.java** file with the credentails(user name and password) created in order to connect to your database.
-* Recreate the tables by running the command **psql < create.sql**
-* Drop a table by running the command : **psql < drop.sql**
+* Recreate the tables and the database by running the command **psql < create.sql**
+* Drop a database and its tables by running the command : **psql < drop.sql**
 
 ## Overview
 
@@ -40,6 +40,19 @@ POJOs are used to store department, news and employee(users) details which in tu
 | /news/:id                             | GET           | View news by Id                                    |
 | /department/:departmentId/news/new    | POST          | Add news to a department based on the department Id|
 | /department/:id/news                  | GET           | View news belonging to a department                |
+
+## Additional information
+
+* To create a department in postman, route: **/department/new** use the format: **name, description, numOfEmployees**
+
+![department](src/main/resources/public/images/department.png)
+
+* To create a new employee, route: **/department/:departmentId/user/new** use the format: **name, position, role, departmentId**
+
+![user](src/main/resources/public/images/user.png)
+
+* To create a news item, route: /department/:departmentId/news/new use the format: **title, content, departmentId**
+![news](src/main/resources/public/images/news.png)
 
 ## Known Bugs
 
