@@ -6,10 +6,17 @@ public class News {
     private String title;
     private String content;
     private int id;
+    private int departmentId;
 
     public News(String title, String content){
         this.title = title;
         this.content = content;
+    }
+
+    public News(String title, String content, int departmentId){
+        this.title = title;
+        this.content = content;
+        this.departmentId = departmentId;
     }
 
     @Override
@@ -48,5 +55,13 @@ public class News {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
     }
 }

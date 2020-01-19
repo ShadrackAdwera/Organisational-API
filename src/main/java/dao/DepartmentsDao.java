@@ -13,6 +13,7 @@ public interface DepartmentsDao {
     //find department by id
     Departments findById(int id);
 
+
     //UPDATE
     //void update(String name, String description, int numOfEmployees);
 
