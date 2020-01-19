@@ -20,8 +20,8 @@ public class App {
         Connection connection;
         Gson gson = new Gson();
 
-        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
+        String connectionString = "jdbc:postgresql://localhost:5432/organisational_api";
+        Sql2o sql2o = new Sql2o(connectionString, "adwesh", "password");
         newsDao = new Sql2oNewsDao(sql2o);
         usersDao = new Sql2oUsersDao(sql2o);
         departmentsDao = new Sql2oDepartmentsDao(sql2o);
