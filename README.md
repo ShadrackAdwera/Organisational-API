@@ -6,13 +6,13 @@ A RESTful API that houses news/articles/posts that are available to all employee
 
 ## Description
 
-POJOs are used to store department, news and employee(users) details which in turn are stored in a Postgres database through a DAO. An interface is used with the method signatues for the methods to create, read, update and delete which are in turn implemented in the dao classes. RESTful routing is used with the gson library being used to serialize and deserialize Java objets to JSON.
+POJOs are used to store department, news and employee(users) details which in turn are stored in a Postgres database through a DAO. An interface is used with the method signatues for the methods to create, read, update and delete which are in turn implemented in the dao classes. RESTful routing is used with the gson library being used to serialize and deserialize Java objets to JSON. JDBC is used to write data to the DB server.
 
 ## Setup/Installation Requirements
 
 * You need to install the [Java SDK](https://sdkman.io/install) in order to create Java applications and the [Java Runtime Environment](https://sdkman.io/usage) which provides the requirements for executing a Java application.
 * The code can be run on any java IDE: NetBeans, IntelliJ IDEA, Eclipse etc
-* Download and install [postman](https://www.getpostman.com/downloads/), then
+* Download and install [postman](https://www.getpostman.com/downloads/), in order to fire JSON at the API and get JSON back when a request is made then,
 * On IntelliJ, run the command **$ gradle run** and write the url **localhost:4567** on postman to test the end points
 ![landing-page](src/main/resources/public/images/postman1.png)
 * A postgres database also needs to be [installed](https://www.2ndquadrant.com/en/blog/pginstaller-install-postgresql/)
