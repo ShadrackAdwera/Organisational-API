@@ -30,7 +30,7 @@ POJOs are used to store department, news and employee(users) details which in tu
 |---                                    |---            |---                                                 |
 | /department/new                       | POST          | Add a new department                               |
 | /departments                          | GET           | Displays all departments                           |
-| /departments/:id                      | GET           | Displays department Id                             |
+| /departments/:id                      | GET           | Displays department based on the department Id     |
 | /department/:departmentId/user/new    | POST          | Add an employee to a department                    |
 | /user/:id                             | GET           | Display a employees based on their Id              |
 | /users                                | GET           | Display All employees                              |
@@ -51,7 +51,7 @@ POJOs are used to store department, news and employee(users) details which in tu
 
 ![user](src/main/resources/public/images/user.png)
 
-* To create a news item, route: /department/:departmentId/news/new use the format: **title, content, departmentId**
+* To create a news item, route: **/department/:departmentId/news/new** use the format: **title, content, departmentId**
 ![news](src/main/resources/public/images/news.png)
 
 ## Known Bugs
