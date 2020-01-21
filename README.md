@@ -32,7 +32,7 @@ POJOs are used to store department, news and employee(users) details which in tu
 | /departments                          | GET           | Displays all departments                           |
 | /departments/:id                      | GET           | Displays department based on the department Id     |
 | /department/:departmentId/user/new    | POST          | Add an employee to a department                    |
-| /user/:id                             | GET           | Display a employees based on their Id              |
+| /user/:id                             | GET           | Display an employee based on their Id              |
 | /users                                | GET           | Display All employees                              |
 | /department/:id/users                 | GET           | Displays all employees in a department             |
 | /news/new                             | POST          | Add news                                           |
