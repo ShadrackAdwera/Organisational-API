@@ -22,7 +22,7 @@ POJOs are used to store department, news and employee(users) details which in tu
 
 ## Overview
 
-* To view the API on your chrome browser, add the extension [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh) to your browser and view the link: <https://adwera-organisational-api.herokuapp.com/>
+* To view the API on your chrome browser, add the extension [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh) to your browser and view the link: <https://org-api-unlocked.herokuapp.com/>
 
 ## End Points
 
